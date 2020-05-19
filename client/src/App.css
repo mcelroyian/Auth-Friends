@@ -1,0 +1,14 @@
+.friends-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.friends-container div {
+    width: 40%;
+}
+
+.friends-list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { axiosWithAuth } from '../utils/axiosWithAuth'
+import AddFriend from './AddFriend'
 
 const Friends = props => {
 
@@ -23,17 +24,22 @@ const Friends = props => {
     if (isLoading) return <h2>Friends data is loading</h2>
 
     return (
-        <div>
-            Friends
+        <div className='friends-container'>
+            <div className='friends-list'>
+            <h2>Friends</h2>
             {friends.map(friend => {
                 return (
                     <div className='friend' key={friend.id}>
-                    <h2>{friend.name}</h2>
+                    <h3>{friend.name}</h3>
                     <p>Age: {friend.age}</p>
                     <p>Email: {friend.email}</p>
                     </div>
                 )
             })}
+            </div>  
+            <div>
+                <AddFriend setFriends={setFriends}/>
+            </div>
         </div>
     )
 }
